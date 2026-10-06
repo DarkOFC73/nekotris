@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#12101c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Nekotris :3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="brand">
+      <div><h1>NEKOTRIS</h1><p>tetris but neko :3</p></div>
+      <button id="pauseTop" class="tiny">Ⅱ</button>
+    </header>
+
+    <section class="game-layout">
+      <div class="board-wrap">
+        <canvas id="game" width="320" height="640" aria-label="Tabuleiro do Nekotris"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <h2 id="overlayTitle">PAUSA</h2>
+          <p id="overlayText">(＿ ＿*) Z z z</p>
+          <button id="overlayButton">voltar</button>
+        </div>
+        <div id="toast" class="toast"></div>
+      </div>
+
+      <aside class="side">
+        <div class="stats card">
+          <span>SCORE</span><strong id="score">00000000</strong>
+          <div><b>LEVEL</b><em id="level">1</em></div>
+          <div><b>LINES</b><em id="lines">0</em></div>
+        </div>
+        <div class="previews">
+          <div class="card preview"><span>HOLD</span><canvas id="hold" width="96" height="84"></canvas></div>
+          <div class="card preview next"><span>NEXT</span><canvas id="next" width="96" height="210"></canvas></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="controls" aria-label="Controles touch">
+      <button data-action="left" class="control">◀</button>
+      <button data-action="down" class="control">▼</button>
+      <button data-action="right" class="control">▶</button>
+      <button data-action="rotate" class="control accent">↻</button>
+      <button data-action="hold" class="control small">HOLD</button>
+      <button data-action="drop" class="control drop">DROP</button>
+    </section>
+    <p class="desktop-help">← → mover · ↓ descer · ↑/X girar · Z giro reverso · C hold · Espaço drop · P/Esc pausa</p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
